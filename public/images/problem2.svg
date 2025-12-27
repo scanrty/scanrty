@@ -7,27 +7,27 @@
   </defs>
   <rect width="800" height="400" fill="url(#bg2)"/>
   
-  <!-- Grid lines -->
-  <line x1="100" y1="300" x2="700" y2="300" stroke="#7dd3fc" stroke-width="2" opacity="0.3"/>
-  <line x1="100" y1="250" x2="700" y2="250" stroke="#7dd3fc" stroke-width="1" opacity="0.2"/>
-  <line x1="100" y1="200" x2="700" y2="200" stroke="#7dd3fc" stroke-width="1" opacity="0.2"/>
-  <line x1="100" y1="150" x2="700" y2="150" stroke="#7dd3fc" stroke-width="1" opacity="0.2"/>
-  <line x1="100" y1="100" x2="700" y2="100" stroke="#7dd3fc" stroke-width="1" opacity="0.2"/>
+  <!-- Grid lines - SKY BLUE -->
+  <line x1="100" y1="300" x2="700" y2="300" stroke="#38bdf8" stroke-width="2" opacity="0.3"/>
+  <line x1="100" y1="250" x2="700" y2="250" stroke="#38bdf8" stroke-width="1" opacity="0.2"/>
+  <line x1="100" y1="200" x2="700" y2="200" stroke="#38bdf8" stroke-width="1" opacity="0.2"/>
+  <line x1="100" y1="150" x2="700" y2="150" stroke="#38bdf8" stroke-width="1" opacity="0.2"/>
+  <line x1="100" y1="100" x2="700" y2="100" stroke="#38bdf8" stroke-width="1" opacity="0.2"/>
   
-  <!-- Bars showing hotel performance - WHITE instead of pink -->
+  <!-- Bars showing hotel performance - WHITE -->
   <rect x="150" y="200" width="80" height="100" fill="#ffffff" opacity="0.7"/>
   <rect x="280" y="220" width="80" height="80" fill="#ffffff" opacity="0.7"/>
   <rect x="410" y="180" width="80" height="120" fill="#ffffff" opacity="0.7"/>
   <rect x="540" y="240" width="80" height="60" fill="#ffffff" opacity="0.7"/>
   
-  <!-- Trend line -->
-  <polyline points="190,250 320,270 450,230 580,270" stroke="#7dd3fc" stroke-width="4" fill="none" opacity="0.8"/>
+  <!-- Trend line - SKY BLUE -->
+  <polyline points="190,250 320,270 450,230 580,270" stroke="#38bdf8" stroke-width="4" fill="none" opacity="0.8"/>
   
   <!-- Stars for rating -->
   <text x="150" y="80" font-size="30" fill="#ffd60a">★★★</text>
   <text x="400" y="80" font-size="30" fill="#ffd60a">★★★★</text>
   <text x="600" y="80" font-size="30" fill="#ffd60a">★★★★★</text>
   
-  <!-- Euro symbol -->
-  <text x="50" y="210" font-size="40" font-weight="bold" fill="#7dd3fc" opacity="0.6">€</text>
+  <!-- Euro symbol - SKY BLUE -->
+  <text x="50" y="210" font-size="40" font-weight="bold" fill="#38bdf8" opacity="0.6">€</text>
 </svg>
