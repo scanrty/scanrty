@@ -3,24 +3,24 @@ export default function Hero() {
     <section className="min-h-screen flex items-center justify-center px-8 pt-32 pb-16">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center w-full">
         <div>
-          <h1 className="text-6xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-[#00d4ff] to-white bg-clip-text text-transparent">
+          <h1 className="text-6xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-[#7dd3fc] to-white bg-clip-text text-transparent">
             L'IA au service de votre patrimoine immobilier
           </h1>
           <p className="text-xl text-white mb-8 leading-relaxed">
             Détectez les sous-locations illégales et optimisez la rentabilité de vos établissements hôteliers grâce à notre intelligence artificielle de pointe.
           </p>
           <div className="flex gap-6 flex-wrap">
-            <a href="#pricing" className="px-8 py-4 rounded-full bg-gradient-to-br from-[#00d4ff] to-[#0077b6] text-white font-semibold no-underline shadow-lg shadow-[#00d4ff]/30 hover:shadow-[#00d4ff]/40 hover:-translate-y-0.5 transition-all text-lg">
+            <a href="#pricing" className="px-8 py-4 rounded-full bg-gradient-to-br from-[#7dd3fc] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#7dd3fc]/30 hover:shadow-[#7dd3fc]/40 hover:-translate-y-0.5 transition-all text-lg">
               Découvrir nos offres
             </a>
-            <a href="#solutions" className="px-8 py-4 rounded-full bg-transparent text-[#00d4ff] font-semibold no-underline border-2 border-[#00d4ff] hover:bg-[#00d4ff] hover:text-[#000814] transition-all text-lg">
+            <a href="#solutions" className="px-8 py-4 rounded-full bg-transparent text-[#7dd3fc] font-semibold no-underline border-2 border-[#7dd3fc] hover:bg-[#7dd3fc] hover:text-[#000814] transition-all text-lg">
               Comment ça marche ?
             </a>
           </div>
         </div>
         
         <div className="animate-float">
-          <img src="/images/hero.jpg" alt="ScanRty AI" className="w-full rounded-3xl shadow-2xl shadow-[#00d4ff]/20" />
+          <img src="/images/hero.jpg" alt="ScanRty AI" className="w-full rounded-3xl shadow-2xl shadow-[#7dd3fc]/20" />
         </div>
       </div>
       
