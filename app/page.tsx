@@ -187,7 +187,7 @@ export default function Home() {
                 Service client sous 48h
               </li>
             </ul>
-            <a href="https://buy.stripe.com/test_5kQcN61n3egmdPWdrtew800" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="https://buy.stripe.com/9B67sM0b3bhK4J2ejg4Rq00" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
               Commander
             </a>
           </div>
@@ -220,7 +220,7 @@ export default function Home() {
                 Service client sous 24h
               </li>
             </ul>
-            <a href="https://buy.stripe.com/test_3cI6oI5Dja06cLSfzBew801" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="https://buy.stripe.com/7sYcN66zr0D6ejC3EC4Rq01" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
               Souscrire
             </a>
           </div>
@@ -250,7 +250,7 @@ export default function Home() {
                 Support prioritaire
               </li>
             </ul>
-            <a href="https://buy.stripe.com/test_3cIaEY8Pv5JQ5jqfzBew802" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="https://buy.stripe.com/bJe3cwf5X4TmfnGcb84Rq02" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
               Essayer
             </a>
           </div>
