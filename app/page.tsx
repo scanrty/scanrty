@@ -187,7 +187,7 @@ export default function Home() {
                 Service client sous 48h
               </li>
             </ul>
-            <a href="mailto:info.client@scanrty.com?subject=Commande%20Sentinelle&body=Bonjour%2C%0A%0AJe%20souhaite%20commander%20l'offre%20Sentinelle%20(9%E2%82%AC)%20pour%20d%C3%A9tecter%20une%20%C3%A9ventuelle%20sous-location.%0A%0AAdresse%20du%20bien%20%C3%A0%20surveiller%20%3A%0A%0AMon%20nom%20%3A%0AMon%20t%C3%A9l%C3%A9phone%20%3A" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="https://buy.stripe.com/test_5kQcN61n3egmdPWdrtew800" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
               Commander
             </a>
           </div>
@@ -220,7 +220,7 @@ export default function Home() {
                 Service client sous 24h
               </li>
             </ul>
-            <a href="mailto:info.client@scanrty.com?subject=Souscription%20VigilAn&body=Bonjour%2C%0A%0AJe%20souhaite%20souscrire%20%C3%A0%20l'offre%20VigilAn%20(59%E2%82%AC%2Fan)%20pour%20une%20surveillance%20annuelle.%0A%0AAdresse%20du%20bien%20%C3%A0%20surveiller%20%3A%0A%0AMon%20nom%20%3A%0AMon%20t%C3%A9l%C3%A9phone%20%3A" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="https://buy.stripe.com/test_3cI6oI5Dja06cLSfzBew801" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
               Souscrire
             </a>
           </div>
@@ -250,7 +250,7 @@ export default function Home() {
                 Support prioritaire
               </li>
             </ul>
-            <a href="mailto:info.client@scanrty.com?subject=Essai%20TarGate&body=Bonjour%2C%0A%0AJe%20souhaite%20tester%20TarGate%20(99%E2%82%AC%2Fmois)%20pour%20optimiser%20mon%20%C3%A9tablissement.%0A%0ANom%20de%20l'%C3%A9tablissement%20%3A%0AVille%20%3A%0A%0AMon%20nom%20%3A%0AMon%20t%C3%A9l%C3%A9phone%20%3A" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="https://buy.stripe.com/test_3cIaEY8Pv5JQ5jqfzBew802" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
               Essayer
             </a>
           </div>
