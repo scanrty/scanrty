@@ -21,10 +21,10 @@ export default function Header() {
         <ul className="hidden md:flex gap-8 list-none items-center">
           <li><a href="#solutions" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors">Solutions</a></li>
           <li><a href="#pricing" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors">Tarifs</a></li>
-          <li><a href="#about" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors">À propos</a></li>
+          <li><a href="/contact" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors">Contact</a></li>
           <li>
-            <a href="#contact" className="px-8 py-3 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
-              Contactez-nous
+            <a href="/contact" className="px-8 py-3 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+              Demander un devis
             </a>
           </li>
         </ul>

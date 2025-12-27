@@ -280,7 +280,7 @@ export default function Home() {
                 Présence d'un consultant
               </li>
             </ul>
-            <a href="mailto:info.client@scanrty.com?subject=Demande%20de%20devis%20HitScan&body=Bonjour%2C%0A%0AJe%20souhaite%20recevoir%20un%20devis%20pour%20HitScan%20(analyse%20compl%C3%A8te).%0A%0ANom%20de%20l'%C3%A9tablissement%20%3A%0AVille%20%3A%0AType%20d'%C3%A9tablissement%20%3A%0A%0AMon%20nom%20%3A%0AMon%20t%C3%A9l%C3%A9phone%20%3A" className="block w-full px-8 py-4 text-center rounded-full bg-transparent text-[#38bdf8] font-semibold no-underline border-2 border-[#38bdf8] hover:bg-[#38bdf8] hover:text-[#000814] transition-all">
+            <a href="/contact" className="block w-full px-8 py-4 text-center rounded-full bg-transparent text-[#38bdf8] font-semibold no-underline border-2 border-[#38bdf8] hover:bg-[#38bdf8] hover:text-[#000814] transition-all">
               Demander un devis
             </a>
           </div>
