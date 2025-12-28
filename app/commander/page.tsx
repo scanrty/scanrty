@@ -1,0 +1,423 @@
+'use client'
+
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import Header from '../components/Header'
+
+const PRODUCTS = {
+  sentinelle: {
+    name: 'Sentinelle',
+    price: 9,
+    description: 'Rapport ponctuel de détection de sous-location',
+    stripeLink: 'https://buy.stripe.com/9B67sM0b3bhK4J2ejg4Rq00'
+  },
+  vigilan: {
+    name: 'VigilAn',
+    price: 59,
+    description: 'Surveillance annuelle avec rapports mensuels',
+    stripeLink: 'https://buy.stripe.com/7sYcN66zr0D6ejC3EC4Rq01'
+  }
+}
+
+export default function CommanderPage() {
+  const router = useRouter()
+  const [selectedProduct, setSelectedProduct] = useState<'sentinelle' | 'vigilan'>('sentinelle')
+  const [images, setImages] = useState<File[]>([])
+  const [formData, setFormData] = useState({
+    // Infos client
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    
+    // Infos bien
+    address: '',
+    city: '',
+    postalCode: '',
+    propertyType: 'appartement',
+    rooms: '',
+    surface: '',
+    floor: '',
+    features: [] as string[],
+    description: ''
+  })
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const newImages = Array.from(e.target.files).slice(0, 10)
+      setImages(prev => [...prev, ...newImages].slice(0, 10))
+    }
+  }
+
+  const removeImage = (index: number) => {
+    setImages(prev => prev.filter((_, i) => i !== index))
+  }
+
+  const toggleFeature = (feature: string) => {
+    setFormData(prev => ({
+      ...prev,
+      features: prev.features.includes(feature)
+        ? prev.features.filter(f => f !== feature)
+        : [...prev.features, feature]
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    // Préparer le contenu de l'email
+    const emailContent = `
+NOUVELLE COMMANDE - ${PRODUCTS[selectedProduct].name}
+
+=== INFORMATIONS CLIENT ===
+Nom : ${formData.firstName} ${formData.lastName}
+Email : ${formData.email}
+Téléphone : ${formData.phone}
+
+=== INFORMATIONS DU BIEN ===
+Type : ${formData.propertyType === 'appartement' ? 'Appartement' : formData.propertyType === 'maison' ? 'Maison' : 'Hôtel'}
+Adresse : ${formData.address}
+Ville : ${formData.city}
+Code postal : ${formData.postalCode}
+
+Nombre de pièces : ${formData.rooms}
+Surface : ${formData.surface} m²
+Étage : ${formData.floor || 'Non renseigné'}
+
+Équipements :
+${formData.features.length > 0 ? formData.features.join(', ') : 'Aucun'}
+
+Description / Particularités :
+${formData.description || 'Aucune'}
+
+Nombre de photos : ${images.length}
+
+=== PRODUIT COMMANDÉ ===
+${PRODUCTS[selectedProduct].name} - ${PRODUCTS[selectedProduct].price}€
+${PRODUCTS[selectedProduct].description}
+
+---
+Le client va procéder au paiement via Stripe.
+Préparez le dossier de surveillance.
+    `.trim()
+
+    // Envoyer l'email avec les infos
+    const mailtoLink = `mailto:info.client@scanrty.com?subject=Commande ${PRODUCTS[selectedProduct].name} - ${formData.firstName} ${formData.lastName}&body=${encodeURIComponent(emailContent)}`
+    
+    window.open(mailtoLink, '_blank')
+
+    // Attendre 2 secondes puis rediriger vers Stripe
+    setTimeout(() => {
+      window.location.href = PRODUCTS[selectedProduct].stripeLink
+    }, 2000)
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const product = PRODUCTS[selectedProduct]
+
+  return (
+    <main className="min-h-screen bg-[#000814]">
+      <Header />
+      
+      <section className="max-w-5xl mx-auto px-8 py-32 pt-40">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent">
+            Commander {product.name}
+          </h1>
+          <p className="text-xl text-white mb-2">
+            {product.description}
+          </p>
+          <div className="text-3xl font-bold text-[#38bdf8]">
+            {product.price}€ {selectedProduct === 'vigilan' ? '/an' : ''}
+          </div>
+        </div>
+
+        {/* Sélection du produit */}
+        <div className="bg-[#001d3d] rounded-3xl p-8 mb-8 border border-[#38bdf8]/10">
+          <h2 className="text-2xl font-bold text-white mb-4">Choisissez votre offre</h2>
+          <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {Object.entries(PRODUCTS).map(([key, prod]) => (
+              <button
+                key={key}
+                onClick={() => setSelectedProduct(key as any)}
+                className={`p-6 rounded-xl border-2 transition-all ${
+                  selectedProduct === key
+                    ? 'border-[#38bdf8] bg-[#38bdf8]/10'
+                    : 'border-[#38bdf8]/20 hover:border-[#38bdf8]/40'
+                }`}
+              >
+                <div className="text-white font-bold text-xl mb-2">{prod.name}</div>
+                <div className="text-[#38bdf8] font-bold text-2xl">{prod.price}€</div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-8">
+          {/* Photos du bien */}
+          <div className="bg-[#001d3d] rounded-3xl p-8 border border-[#38bdf8]/10">
+            <h2 className="text-2xl font-bold text-white mb-4">📸 Photos du bien</h2>
+            <p className="text-white/70 mb-4">
+              Uploadez 3 à 10 photos du bien à surveiller (intérieur et extérieur)
+            </p>
+            
+            <label className="block w-full cursor-pointer">
+              <div className="border-2 border-dashed border-[#38bdf8]/30 rounded-xl p-8 text-center hover:border-[#38bdf8] transition-colors">
+                <div className="text-4xl mb-2">📷</div>
+                <div className="text-white font-semibold mb-1">Cliquez pour ajouter des photos</div>
+                <div className="text-white/50 text-sm">Maximum 10 photos (JPG, PNG)</div>
+              </div>
+              <input
+                type="file"
+                multiple
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="hidden"
+              />
+            </label>
+
+            {images.length > 0 && (
+              <div className="grid grid-cols-5 gap-4 mt-6">
+                {images.map((image, index) => (
+                  <div key={index} className="relative group">
+                    <img
+                      src={URL.createObjectURL(image)}
+                      alt={`Photo ${index + 1}`}
+                      className="w-full h-32 object-cover rounded-xl"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removeImage(index)}
+                      className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="text-white/50 text-sm mt-2">
+              {images.length}/10 photos uploadées
+            </div>
+          </div>
+
+          {/* Informations du bien */}
+          <div className="bg-[#001d3d] rounded-3xl p-8 border border-[#38bdf8]/10">
+            <h2 className="text-2xl font-bold text-white mb-6">🏠 Informations du bien</h2>
+            
+            <div className="space-y-6">
+              {/* Type de bien */}
+              <div>
+                <label className="block text-white font-semibold mb-2">Type de bien *</label>
+                <select
+                  name="propertyType"
+                  required
+                  value={formData.propertyType}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                >
+                  <option value="appartement">Appartement</option>
+                  <option value="maison">Maison</option>
+                  <option value="hotel">Hôtel / Établissement</option>
+                </select>
+              </div>
+
+              {/* Adresse */}
+              <div>
+                <label className="block text-white font-semibold mb-2">Adresse complète *</label>
+                <input
+                  type="text"
+                  name="address"
+                  required
+                  value={formData.address}
+                  onChange={handleChange}
+                  placeholder="Numéro et nom de rue"
+                  className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-white font-semibold mb-2">Code postal *</label>
+                  <input
+                    type="text"
+                    name="postalCode"
+                    required
+                    value={formData.postalCode}
+                    onChange={handleChange}
+                    placeholder="75008"
+                    className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-white font-semibold mb-2">Ville *</label>
+                  <input
+                    type="text"
+                    name="city"
+                    required
+                    value={formData.city}
+                    onChange={handleChange}
+                    placeholder="Paris"
+                    className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Caractéristiques */}
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-white font-semibold mb-2">Pièces *</label>
+                  <input
+                    type="number"
+                    name="rooms"
+                    required
+                    min="1"
+                    value={formData.rooms}
+                    onChange={handleChange}
+                    placeholder="3"
+                    className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-white font-semibold mb-2">Surface (m²) *</label>
+                  <input
+                    type="number"
+                    name="surface"
+                    required
+                    min="1"
+                    value={formData.surface}
+                    onChange={handleChange}
+                    placeholder="65"
+                    className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-white font-semibold mb-2">Étage</label>
+                  <input
+                    type="text"
+                    name="floor"
+                    value={formData.floor}
+                    onChange={handleChange}
+                    placeholder="3ème"
+                    className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Équipements */}
+              <div>
+                <label className="block text-white font-semibold mb-3">Équipements / Particularités</label>
+                <div className="grid grid-cols-3 gap-3">
+                  {['Balcon', 'Terrasse', 'Jardin', 'Parking', 'Cave', 'Ascenseur', 'Piscine', 'Meublé', 'Climatisation'].map(feature => (
+                    <button
+                      key={feature}
+                      type="button"
+                      onClick={() => toggleFeature(feature)}
+                      className={`px-4 py-2 rounded-xl border-2 transition-all ${
+                        formData.features.includes(feature)
+                          ? 'border-[#38bdf8] bg-[#38bdf8]/10 text-[#38bdf8]'
+                          : 'border-[#38bdf8]/20 text-white hover:border-[#38bdf8]/40'
+                      }`}
+                    >
+                      {feature}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Description */}
+              <div>
+                <label className="block text-white font-semibold mb-2">Description / Remarques</label>
+                <textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleChange}
+                  rows={4}
+                  placeholder="Ajoutez des détails importants pour la surveillance..."
+                  className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none resize-none"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Informations client */}
+          <div className="bg-[#001d3d] rounded-3xl p-8 border border-[#38bdf8]/10">
+            <h2 className="text-2xl font-bold text-white mb-6">👤 Vos informations</h2>
+            
+            <div className="space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-white font-semibold mb-2">Prénom *</label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    required
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-white font-semibold mb-2">Nom *</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    required
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-white font-semibold mb-2">Email *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-white font-semibold mb-2">Téléphone *</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bouton de validation */}
+          <div className="text-center">
+            <button
+              type="submit"
+              disabled={images.length < 3}
+              className="px-16 py-5 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-bold text-xl shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Procéder au paiement ({product.price}€)
+            </button>
+            {images.length < 3 && (
+              <p className="text-red-400 mt-3">Minimum 3 photos requises</p>
+            )}
+          </div>
+        </form>
+      </section>
+    </main>
+  )
+}
