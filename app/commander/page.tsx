@@ -172,7 +172,7 @@ Préparez le dossier de surveillance.
               <div className="border-2 border-dashed border-[#38bdf8]/30 rounded-xl p-8 text-center hover:border-[#38bdf8] transition-colors">
                 <div className="text-4xl mb-2">📷</div>
                 <div className="text-white font-semibold mb-1">Cliquez pour ajouter des photos</div>
-                <div className="text-white/50 text-sm">Maximum 10 photos (JPG, PNG)</div>
+                <div className="text-white/50 text-sm">Jusqu'à 10 photos maximum (JPG, PNG)</div>
               </div>
               <input
                 type="file"
