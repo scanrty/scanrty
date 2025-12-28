@@ -2,6 +2,8 @@ import { headers } from 'next/headers'
 import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { sendConfirmationEmail, sendNotificationToTeam } from '@/lib/email'
+import { scanProperty, PropertyData } from '@/lib/scraping'
+import { generateTextReport, generateHTMLReport } from '@/lib/report'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2023-10-16',
@@ -94,6 +96,35 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
 
   // Exemple : Créer une entrée dans ta base de données
   // await createCustomerRecord({ ... })
+  
+  // NOUVEAU : Déclencher le scraping pour Sentinelle et VigilAn
+  if (productName.includes('Sentinelle') || productName.includes('VigilAn')) {
+    console.log('🔍 Déclenchement du scraping automatique...')
+    
+    // Récupérer les métadonnées du paiement (infos du bien)
+    // Note: Il faut d'abord modifier le formulaire de commande pour envoyer ces infos via metadata
+    const metadata = session.metadata || {}
+    
+    if (metadata.address && metadata.city) {
+      const propertyData: PropertyData = {
+        address: metadata.address,
+        city: metadata.city,
+        postalCode: metadata.postalCode || '',
+        propertyType: metadata.propertyType || 'appartement',
+        rooms: parseInt(metadata.rooms || '0'),
+        surface: parseInt(metadata.surface || '0'),
+        floor: metadata.floor,
+        features: metadata.features ? metadata.features.split(',') : [],
+        description: metadata.description || '',
+      }
+      
+      // Lancer le scraping en arrière-plan
+      triggerScraping(propertyData, customerEmail!, customerName!)
+        .catch(error => console.error('❌ Erreur scraping:', error))
+    } else {
+      console.log('⚠️ Pas de données de bien dans metadata, scraping non lancé')
+    }
+  }
 }
 
 // Gérer un paiement réussi
@@ -158,5 +189,37 @@ async function sendConfirmationEmailOld(data: {
   } catch (error) {
     console.error('❌ Erreur lors de l\'envoi des emails:', error)
     // Ne pas bloquer le webhook si l'email échoue
+  }
+}
+
+// Fonction pour déclencher le scraping en arrière-plan
+async function triggerScraping(propertyData: PropertyData, customerEmail: string, customerName: string) {
+  console.log('🤖 Démarrage du scraping pour:', propertyData.address)
+  
+  try {
+    // Lancer le scan
+    const scrapingReport = await scanProperty(propertyData)
+    
+    console.log('✅ Scan terminé:', scrapingReport.summary)
+    
+    // Générer le rapport
+    const textReport = generateTextReport(scrapingReport)
+    const htmlReport = generateHTMLReport(scrapingReport)
+    
+    // TODO: Envoyer le rapport par email avec le HTML
+    // Pour l'instant, on log juste
+    console.log('📄 Rapport généré')
+    console.log(textReport)
+    
+    // TODO Phase 2: Envoyer par email avec pièce jointe PDF
+    // await sendReportEmail(customerEmail, customerName, htmlReport)
+    
+    // TODO Phase 2: Sauvegarder dans une base de données
+    // await saveReport(scrapingReport)
+    
+    return scrapingReport
+  } catch (error) {
+    console.error('❌ Erreur lors du scraping:', error)
+    throw error
   }
 }

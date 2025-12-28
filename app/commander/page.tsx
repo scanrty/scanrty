@@ -23,6 +23,7 @@ export default function CommanderPage() {
   const router = useRouter()
   const [selectedProduct, setSelectedProduct] = useState<'sentinelle' | 'vigilan'>('sentinelle')
   const [images, setImages] = useState<File[]>([])
+  const [status, setStatus] = useState<'idle' | 'sending'>('idle')
   const [formData, setFormData] = useState({
     // Infos client
     firstName: '',
@@ -64,52 +65,52 @@ export default function CommanderPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setStatus('sending')
 
-    // Préparer le contenu de l'email
-    const emailContent = `
-NOUVELLE COMMANDE - ${PRODUCTS[selectedProduct].name}
+    try {
+      // Créer une session Stripe avec toutes les données
+      const response = await fetch('/api/create-checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          product: selectedProduct,
+          propertyData: {
+            address: formData.address,
+            city: formData.city,
+            postalCode: formData.postalCode,
+            propertyType: formData.propertyType,
+            rooms: formData.rooms,
+            surface: formData.surface,
+            floor: formData.floor,
+            features: formData.features,
+            description: formData.description,
+          },
+          customerData: {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            phone: formData.phone,
+          },
+        }),
+      })
 
-=== INFORMATIONS CLIENT ===
-Nom : ${formData.firstName} ${formData.lastName}
-Email : ${formData.email}
-Téléphone : ${formData.phone}
+      const data = await response.json()
 
-=== INFORMATIONS DU BIEN ===
-Type : ${formData.propertyType === 'appartement' ? 'Appartement' : formData.propertyType === 'maison' ? 'Maison' : 'Hôtel'}
-Adresse : ${formData.address}
-Ville : ${formData.city}
-Code postal : ${formData.postalCode}
-
-Nombre de pièces : ${formData.rooms}
-Surface : ${formData.surface} m²
-Étage : ${formData.floor || 'Non renseigné'}
-
-Équipements :
-${formData.features.length > 0 ? formData.features.join(', ') : 'Aucun'}
-
-Description / Particularités :
-${formData.description || 'Aucune'}
-
-Nombre de photos : ${images.length}
-
-=== PRODUIT COMMANDÉ ===
-${PRODUCTS[selectedProduct].name} - ${PRODUCTS[selectedProduct].price}€
-${PRODUCTS[selectedProduct].description}
-
----
-Le client va procéder au paiement via Stripe.
-Préparez le dossier de surveillance.
-    `.trim()
-
-    // Envoyer l'email avec les infos
-    const mailtoLink = `mailto:info.client@scanrty.com?subject=Commande ${PRODUCTS[selectedProduct].name} - ${formData.firstName} ${formData.lastName}&body=${encodeURIComponent(emailContent)}`
-    
-    window.open(mailtoLink, '_blank')
-
-    // Attendre 2 secondes puis rediriger vers Stripe
-    setTimeout(() => {
-      window.location.href = PRODUCTS[selectedProduct].stripeLink
-    }, 2000)
+      if (data.url) {
+        // Rediriger vers Stripe Checkout
+        window.location.href = data.url
+      } else {
+        console.error('Erreur:', data.error)
+        setStatus('idle')
+        alert('Une erreur est survenue. Veuillez réessayer.')
+      }
+    } catch (error) {
+      console.error('Erreur:', error)
+      setStatus('idle')
+      alert('Une erreur est survenue. Veuillez réessayer.')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -407,9 +408,10 @@ Préparez le dossier de surveillance.
           <div className="text-center">
             <button
               type="submit"
-              className="px-16 py-5 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-bold text-xl shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all"
+              disabled={status === 'sending'}
+              className="px-16 py-5 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-bold text-xl shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Procéder au paiement ({product.price}€)
+              {status === 'sending' ? 'Chargement...' : `Procéder au paiement (${product.price}€)`}
             </button>
             
             {/* Confidentiality notice */}
