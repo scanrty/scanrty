@@ -162,9 +162,10 @@ Préparez le dossier de surveillance.
         <form onSubmit={handleSubmit} className="space-y-8">
           {/* Photos du bien */}
           <div className="bg-[#001d3d] rounded-3xl p-8 border border-[#38bdf8]/10">
-            <h2 className="text-2xl font-bold text-white mb-4">📸 Photos du bien</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">📸 Photos du bien (recommandé)</h2>
             <p className="text-white/70 mb-4">
-              Uploadez 3 à 10 photos du bien à surveiller (intérieur et extérieur)
+              Les photos facilitent grandement la surveillance et améliore la précision de nos rapports. 
+              <span className="text-[#38bdf8]"> Fortement recommandé</span> pour un service optimal.
             </p>
             
             <label className="block w-full cursor-pointer">
@@ -224,13 +225,12 @@ Préparez le dossier de surveillance.
                 >
                   <option value="appartement">Appartement</option>
                   <option value="maison">Maison</option>
-                  <option value="hotel">Hôtel / Établissement</option>
                 </select>
               </div>
 
               {/* Adresse */}
               <div>
-                <label className="block text-white font-semibold mb-2">Adresse complète *</label>
+                <label className="block text-white font-semibold mb-2">Adresse complète du bien à surveiller *</label>
                 <input
                   type="text"
                   name="address"
@@ -407,14 +407,26 @@ Préparez le dossier de surveillance.
           <div className="text-center">
             <button
               type="submit"
-              disabled={images.length < 3}
-              className="px-16 py-5 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-bold text-xl shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-16 py-5 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-bold text-xl shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all"
             >
               Procéder au paiement ({product.price}€)
             </button>
-            {images.length < 3 && (
-              <p className="text-red-400 mt-3">Minimum 3 photos requises</p>
-            )}
+            
+            {/* Confidentiality notice */}
+            <div className="mt-6 max-w-2xl mx-auto bg-[#001d3d] rounded-2xl p-6 border border-[#38bdf8]/10">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">🔒</span>
+                <div className="text-left">
+                  <h3 className="text-white font-semibold mb-2">Confidentialité & Protection des données</h3>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Toutes les informations et photos que vous nous transmettez sont strictement confidentielles 
+                    et utilisées uniquement dans le cadre de votre service de surveillance. 
+                    Vos données seront automatiquement supprimées à la fin de votre abonnement ou après la remise 
+                    de votre rapport ponctuel, conformément au RGPD.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
       </section>

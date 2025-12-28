@@ -1,6 +1,7 @@
 import { headers } from 'next/headers'
 import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
+import { sendConfirmationEmail, sendNotificationToTeam } from '@/lib/email'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2023-10-16',
@@ -83,8 +84,8 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
   `)
 
   // ICI : Tu peux envoyer un email, créer un ticket, etc.
-  // Exemple : Envoyer un email de confirmation personnalisé
-  await sendConfirmationEmail({
+  // Envoyer un email de confirmation personnalisé
+  await sendConfirmationEmailOld({
     email: customerEmail!,
     name: customerName!,
     product: productName,
@@ -137,8 +138,8 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
   }
 }
 
-// Fonction pour envoyer un email de confirmation (exemple)
-async function sendConfirmationEmail(data: {
+// Fonction pour envoyer un email de confirmation (avec Resend)
+async function sendConfirmationEmailOld(data: {
   email: string
   name: string
   product: string
@@ -146,34 +147,16 @@ async function sendConfirmationEmail(data: {
 }) {
   console.log(`📧 Envoi email de confirmation à ${data.email}`)
   
-  // ICI : Intégrer avec un service d'email (Resend, SendGrid, etc.)
-  // Pour l'instant, on log juste les infos
-  
-  console.log(`
-    ===== EMAIL DE CONFIRMATION =====
-    À: ${data.email}
-    Nom: ${data.name}
-    Produit: ${data.product}
-    Montant: ${data.amount}€
+  try {
+    // Envoyer l'email au client
+    await sendConfirmationEmail(data)
     
-    Bonjour ${data.name},
+    // Envoyer la notification à l'équipe
+    await sendNotificationToTeam(data)
     
-    Merci pour votre achat de ${data.product} !
-    
-    Montant payé: ${data.amount}€
-    
-    ${data.product.includes('Sentinelle') ? 
-      'Votre rapport de détection sera prêt sous 24h.' : 
-      data.product.includes('VigilAn') ?
-      'Votre surveillance annuelle est maintenant active.' :
-      data.product.includes('TarGate') ?
-      'Votre accès au dashboard TarGate a été activé.' :
-      'Nous traitons votre commande.'
-    }
-    
-    L'équipe ScanRty
-    ================================
-  `)
-  
-  // TODO: Remplacer par un vrai service d'email
+    console.log('✅ Emails envoyés avec succès')
+  } catch (error) {
+    console.error('❌ Erreur lors de l\'envoi des emails:', error)
+    // Ne pas bloquer le webhook si l'email échoue
+  }
 }
