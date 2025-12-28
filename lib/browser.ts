@@ -2,7 +2,7 @@
  * Service Puppeteer optimisé pour Vercel (Serverless)
  */
 
-import chromium from 'chrome-aws-lambda'
+import chromium from '@sparticuz/chromium'
 import puppeteer from 'puppeteer-core'
 
 export async function getBrowser() {
@@ -16,11 +16,11 @@ export async function getBrowser() {
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     })
   } else {
-    // En production sur Vercel, utiliser chrome-aws-lambda
+    // En production sur Vercel, utiliser @sparticuz/chromium
     return puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
+      executablePath: await chromium.executablePath(),
       headless: chromium.headless,
     })
   }
