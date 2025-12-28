@@ -1,11 +1,13 @@
 /**
  * Service Puppeteer optimisé pour Vercel (Serverless)
+ * Import dynamique pour éviter l'erreur de compilation Next.js
  */
 
-import chromium from '@sparticuz/chromium'
-import puppeteer from 'puppeteer-core'
-
 export async function getBrowser() {
+  // Import dynamique uniquement au runtime (pas au build)
+  const chromium = (await import('@sparticuz/chromium')).default
+  const puppeteer = (await import('puppeteer-core')).default
+  
   // Configuration différente selon l'environnement
   const isDev = process.env.NODE_ENV === 'development'
   
