@@ -104,8 +104,10 @@ async function scrapeAirbnb(property: PropertyData): Promise<DetectionResult[]> 
   let browser = null
   
   try {
-    const { getBrowser, closeBrowser } = await import('./browser')
-    browser = await getBrowser()
+    // Import dynamique du browser
+    const browserModule = await import('./browser')
+    browser = await browserModule.getBrowser()
+    const closeBrowser = browserModule.closeBrowser
     
     const page = await browser.newPage()
     
@@ -200,8 +202,8 @@ async function scrapeAirbnb(property: PropertyData): Promise<DetectionResult[]> 
   } catch (error) {
     console.error('❌ Erreur scraping Airbnb:', error)
     if (browser) {
-      const { closeBrowser } = await import('./browser')
-      await closeBrowser(browser)
+      const browserModule = await import('./browser')
+      await browserModule.closeBrowser(browser)
     }
   }
   
@@ -243,8 +245,9 @@ async function scrapeLeBonCoin(property: PropertyData): Promise<DetectionResult[
   let browser = null
   
   try {
-    const { getBrowser, closeBrowser } = await import('./browser')
-    browser = await getBrowser()
+    const browserModule = await import('./browser')
+    browser = await browserModule.getBrowser()
+    const closeBrowser = browserModule.closeBrowser
     
     const page = await browser.newPage()
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36')
@@ -341,8 +344,8 @@ async function scrapeLeBonCoin(property: PropertyData): Promise<DetectionResult[
   } catch (error) {
     console.error('❌ Erreur scraping Le Bon Coin:', error)
     if (browser) {
-      const { closeBrowser } = await import('./browser')
-      await closeBrowser(browser)
+      const browserModule = await import('./browser')
+      await browserModule.closeBrowser(browser)
     }
   }
   
