@@ -5,6 +5,10 @@ import { sendConfirmationEmail, sendNotificationToTeam } from '@/lib/email'
 import { scanProperty, PropertyData } from '@/lib/scraping'
 import { generateTextReport, generateHTMLReport } from '@/lib/report'
 
+// Force cette route à être dynamique
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2023-10-16',
 })

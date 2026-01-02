@@ -2,6 +2,10 @@ import { NextResponse } from 'next/server'
 import { scanProperty, PropertyData } from '@/lib/scraping'
 import { generateTextReport, generateHTMLReport } from '@/lib/report'
 
+// Force cette route à être dynamique (pas de pré-rendering statique)
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
+
 /**
  * Route de test pour le scraping - GRATUIT, pas de paiement requis
  * 
