@@ -7,7 +7,7 @@ const nextConfig = {
   webpack: (config, { isServer }) => {
     if (isServer) {
       // Exclure puppeteer-core et chromium du bundle webpack
-      config.externals = [...(config.externals || []), 'puppeteer-core', '@sparticuz/chromium-min']
+      config.externals = [...(config.externals || []), 'puppeteer-core', '@sparticuz/chromium']
     }
     return config
   },

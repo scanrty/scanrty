@@ -5,7 +5,7 @@
 
 export async function getBrowser() {
   // Import dynamique uniquement au runtime (pas au build)
-  const chromium = (await import('@sparticuz/chromium-min')).default
+  const chromium = (await import('@sparticuz/chromium')).default
   const puppeteer = (await import('puppeteer-core')).default
   
   // Configuration différente selon l'environnement
@@ -18,13 +18,20 @@ export async function getBrowser() {
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     })
   } else {
-    // En production sur Vercel, utiliser @sparticuz/chromium-min
+    // En production sur Vercel, utiliser @sparticuz/chromium
+    // Ajouter --single-process pour réduire la mémoire
     return puppeteer.launch({
-      args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox'],
+      args: [
+        ...chromium.args,
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu',
+        '--single-process',
+        '--no-zygote',
+      ],
       defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath(
-        'https://github.com/Sparticuz/chromium/releases/download/v131.0.2/chromium-v131.0.2-pack.tar'
-      ),
+      executablePath: await chromium.executablePath(),
       headless: chromium.headless,
     })
   }
