@@ -10,7 +10,7 @@ export default function Hero() {
             Détectez les sous-locations illégales et optimisez la rentabilité de vos établissements hôteliers grâce à notre intelligence artificielle de pointe.
           </p>
           <div className="flex gap-6 flex-wrap">
-            <a href="#pricing" className="px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all text-lg">
+            <a href="#pricing" className="px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all text-lg">
               Découvrir nos offres
             </a>
             <a href="#solutions" className="px-8 py-4 rounded-full bg-transparent text-[#38bdf8] font-semibold no-underline border-2 border-[#38bdf8] hover:bg-[#38bdf8] hover:text-[#000814] transition-all text-lg">

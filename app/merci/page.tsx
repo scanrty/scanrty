@@ -63,7 +63,7 @@ function ThankYouContent() {
           </div>
           
           <div className="flex gap-4 justify-center flex-wrap">
-            <a href="/" className="px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="/" className="px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
               Retour à l'accueil
             </a>
             <a href="mailto:info.client@scanrty.com" className="px-8 py-4 rounded-full bg-transparent border-2 border-[#38bdf8] text-[#38bdf8] font-semibold no-underline hover:bg-[#38bdf8] hover:text-white transition-all">

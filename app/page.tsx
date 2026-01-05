@@ -113,7 +113,7 @@ export default function Home() {
                   ✓ Alertes en temps réel
                 </div>
               </div>
-              <a href="#pricing" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
+              <a href="#pricing" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
                 Protéger mon bien
               </a>
             </div>
@@ -144,7 +144,7 @@ export default function Home() {
                   ✓ Alertes événements locaux
                 </div>
               </div>
-              <a href="#pricing" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
+              <a href="#pricing" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
                 Optimiser mon hôtel
               </a>
             </div>
@@ -187,7 +187,7 @@ export default function Home() {
                 Service client sous 48h
               </li>
             </ul>
-            <a href="/commander" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
+            <a href="/commander" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
               Commander
             </a>
           </div>
@@ -220,7 +220,7 @@ export default function Home() {
                 Service client sous 24h
               </li>
             </ul>
-            <a href="/commander" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
+            <a href="/commander" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
               Souscrire
             </a>
           </div>
@@ -250,7 +250,7 @@ export default function Home() {
                 Support prioritaire
               </li>
             </ul>
-            <a href="https://buy.stripe.com/bJe3cwf5X4TmfnGcb84Rq02" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
+            <a href="https://buy.stripe.com/bJe3cwf5X4TmfnGcb84Rq02" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
               Essayer
             </a>
           </div>
@@ -297,7 +297,7 @@ export default function Home() {
           <p className="text-2xl text-white/90 mb-8">
             Rejoignez les centaines de propriétaires qui font confiance à ScanRty
           </p>
-          <a href="#pricing" className="inline-block px-12 py-5 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#60a5fa] text-white font-bold text-xl no-underline hover:shadow-2xl hover:shadow-[#38bdf8]/50 hover:-translate-y-1 transition-all shadow-xl">
+          <a href="#pricing" className="inline-block px-12 py-5 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#60a5fa] text-white font-bold text-xl no-underline hover:-translate-y-1 transition-all">
             Commencer maintenant
           </a>
         </div>

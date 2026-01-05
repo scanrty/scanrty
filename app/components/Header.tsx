@@ -23,7 +23,7 @@ export default function Header() {
           <li><a href="#pricing" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors">Tarifs</a></li>
           <li><a href="/contact" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors">Contact</a></li>
           <li>
-            <a href="/contact" className="px-8 py-3 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
+            <a href="/contact" className="px-8 py-3 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
               Demander un devis
             </a>
           </li>

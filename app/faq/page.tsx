@@ -138,7 +138,7 @@ export default function FAQ() {
             <p className="text-xl text-white/80 mb-6">
               Vous ne trouvez pas la réponse à votre question ?
             </p>
-            <a href="/contact" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
+            <a href="/contact" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
               Contactez-nous
             </a>
           </div>
