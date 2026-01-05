@@ -7,9 +7,9 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#000814]/90 backdrop-blur-xl border-b border-[#38bdf8]/10">
       <nav className="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-4 text-2xl font-bold no-underline">
-          <div className="w-12 h-12 rounded-xl overflow-hidden">
-            <img src="/images/logo.jpg" alt="ScanRty Logo" className="w-full h-full object-cover" />
+        <a href="/" className="flex items-center gap-4 text-2xl font-bold no-underline">
+          <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-[#38bdf8]/30">
+            <img src="/logo.png" alt="ScanRty Logo" className="w-full h-full object-cover" />
           </div>
           <span className="whitespace-nowrap">
             <span className="text-white">Scan</span>
@@ -23,7 +23,7 @@ export default function Header() {
           <li><a href="#pricing" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors">Tarifs</a></li>
           <li><a href="/contact" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors">Contact</a></li>
           <li>
-            <a href="/contact" className="px-8 py-3 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="/contact" className="px-8 py-3 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
               Demander un devis
             </a>
           </li>

@@ -113,7 +113,7 @@ export default function Home() {
                   ✓ Alertes en temps réel
                 </div>
               </div>
-              <a href="#pricing" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+              <a href="#pricing" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
                 Protéger mon bien
               </a>
             </div>
@@ -144,7 +144,7 @@ export default function Home() {
                   ✓ Alertes événements locaux
                 </div>
               </div>
-              <a href="#pricing" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+              <a href="#pricing" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
                 Optimiser mon hôtel
               </a>
             </div>
@@ -187,14 +187,14 @@ export default function Home() {
                 Service client sous 48h
               </li>
             </ul>
-            <a href="/commander" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="/commander" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
               Commander
             </a>
           </div>
 
           {/* VigilAn */}
           <div className="bg-[#001d3d] rounded-3xl p-12 border-2 border-[#38bdf8] hover:-translate-y-2 transition-all shadow-2xl shadow-[#38bdf8]/30 relative md:scale-105">
-            <div className="absolute top-5 right-[-25px] bg-gradient-to-br from-[#ffffff] to-[#e0e7ff] text-white px-12 py-2 text-xs font-bold rotate-45">
+            <div className="absolute top-5 right-[-25px] bg-gradient-to-br from-[#1e3a5f] to-[#152d47] text-white px-12 py-2 text-xs font-bold rotate-45 shadow-lg">
               POPULAIRE
             </div>
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
@@ -220,7 +220,7 @@ export default function Home() {
                 Service client sous 24h
               </li>
             </ul>
-            <a href="/commander" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="/commander" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
               Souscrire
             </a>
           </div>
@@ -250,7 +250,7 @@ export default function Home() {
                 Support prioritaire
               </li>
             </ul>
-            <a href="https://buy.stripe.com/bJe3cwf5X4TmfnGcb84Rq02" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/40 hover:-translate-y-0.5 transition-all">
+            <a href="https://buy.stripe.com/bJe3cwf5X4TmfnGcb84Rq02" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline shadow-lg shadow-[#38bdf8]/30 hover:shadow-[#38bdf8]/50 hover:-translate-y-0.5 transition-all">
               Essayer
             </a>
           </div>
@@ -288,16 +288,19 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-br from-[#38bdf8] to-[#ffffff] py-24 text-center my-32">
-        <h2 className="text-5xl font-extrabold text-white mb-6">
-          Prêt à protéger votre patrimoine ?
-        </h2>
-        <p className="text-2xl text-white/90 mb-8">
-          Rejoignez les centaines de propriétaires qui font confiance à ScanRty
-        </p>
-        <a href="#pricing" className="inline-block px-12 py-5 rounded-full bg-white text-[#0ea5e9] font-bold text-xl no-underline hover:bg-[#000814] hover:text-[#38bdf8] transition-all shadow-2xl">
-          Commencer maintenant
-        </a>
+      <section className="bg-gradient-to-br from-[#1e3a5f] to-[#001d3d] py-24 text-center my-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.15)_0%,transparent_70%)]"></div>
+        <div className="relative z-10">
+          <h2 className="text-5xl font-extrabold text-white mb-6">
+            Prêt à protéger votre patrimoine ?
+          </h2>
+          <p className="text-2xl text-white/90 mb-8">
+            Rejoignez les centaines de propriétaires qui font confiance à ScanRty
+          </p>
+          <a href="#pricing" className="inline-block px-12 py-5 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#60a5fa] text-white font-bold text-xl no-underline hover:shadow-2xl hover:shadow-[#38bdf8]/50 hover:-translate-y-1 transition-all shadow-xl">
+            Commencer maintenant
+          </a>
+        </div>
       </section>
 
       {/* Footer */}
@@ -305,7 +308,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold text-[#38bdf8] mb-4">ScanRty</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/logo.png" alt="ScanRty" className="w-10 h-10 rounded-full ring-2 ring-[#38bdf8]/30" />
+                <h3 className="text-2xl font-bold text-[#38bdf8]">ScanRty</h3>
+              </div>
               <p className="text-white leading-relaxed">
                 L'intelligence artificielle au service de l'immobilier et de l'hôtellerie. Nous aidons les propriétaires et hôteliers à protéger et optimiser leurs actifs.
               </p>
@@ -316,6 +322,7 @@ export default function Home() {
                 <li><a href="#solutions" className="text-white hover:text-[#38bdf8] transition-colors no-underline">Détection sous-location</a></li>
                 <li><a href="#solutions" className="text-white hover:text-[#38bdf8] transition-colors no-underline">Optimisation hôtelière</a></li>
                 <li><a href="#pricing" className="text-white hover:text-[#38bdf8] transition-colors no-underline">Tarifs</a></li>
+                <li><a href="/faq" className="text-white hover:text-[#38bdf8] transition-colors no-underline">FAQ</a></li>
               </ul>
             </div>
             <div>
@@ -327,8 +334,15 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="text-center pt-8 border-t border-[#38bdf8]/10 text-white">
-            <p>&copy; 2024 ScanRty. Tous droits réservés.</p>
+          <div className="text-center pt-8 border-t border-[#38bdf8]/10">
+            <div className="flex justify-center gap-6 mb-4 text-sm">
+              <a href="/mentions-legales" className="text-white hover:text-[#38bdf8] transition-colors no-underline">Mentions légales</a>
+              <span className="text-white">•</span>
+              <a href="/cgv" className="text-white hover:text-[#38bdf8] transition-colors no-underline">CGV</a>
+              <span className="text-white">•</span>
+              <a href="/confidentialite" className="text-white hover:text-[#38bdf8] transition-colors no-underline">Confidentialité</a>
+            </div>
+            <p className="text-white">&copy; 2026 ScanRty. Tous droits réservés.</p>
           </div>
         </div>
       </footer>
