@@ -1,9 +1,7 @@
 import { headers } from 'next/headers'
 import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
-import { sendConfirmationEmail, sendNotificationToTeam } from '@/lib/email'
-import { scanProperty, PropertyData } from '@/lib/scraping'
-import { generateTextReport, generateHTMLReport } from '@/lib/report'
+import { sendOrderConfirmationToClient, sendOrderNotificationToTeam } from '@/lib/notifications'
 
 // Force cette route à être dynamique
 export const dynamic = 'force-dynamic'
@@ -74,13 +72,13 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
 
   // Récupérer les détails du client
   const customerEmail = session.customer_details?.email
-  const customerName = session.customer_details?.name
-  const customerPhone = session.customer_details?.phone
+  const customerName = session.customer_details?.name || 'Client'
+  const customerPhone = session.customer_details?.phone || ''
   const amountTotal = session.amount_total ? session.amount_total / 100 : 0
 
   // Récupérer les line items pour savoir quel produit a été acheté
   const lineItems = await stripe.checkout.sessions.listLineItems(session.id)
-  const productName = lineItems.data[0]?.description || 'Produit inconnu'
+  const productName = lineItems.data[0]?.description || 'Produit'
 
   console.log(`
     📧 Client: ${customerName} (${customerEmail})
@@ -89,53 +87,59 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
     📦 Produit: ${productName}
   `)
 
-  // ICI : Tu peux envoyer un email, créer un ticket, etc.
-  // Envoyer un email de confirmation personnalisé
-  await sendConfirmationEmailOld({
-    email: customerEmail!,
-    name: customerName!,
-    product: productName,
-    amount: amountTotal,
-  })
-
-  // Exemple : Créer une entrée dans ta base de données
-  // await createCustomerRecord({ ... })
+  // Récupérer les métadonnées (infos du bien)
+  const metadata = session.metadata || {}
   
-  // NOUVEAU : Déclencher le scraping pour Sentinelle et VigilAn
-  if (productName.includes('Sentinelle') || productName.includes('VigilAn')) {
-    console.log('🔍 Déclenchement du scraping automatique...')
-    
-    // Récupérer les métadonnées du paiement (infos du bien)
-    // Note: Il faut d'abord modifier le formulaire de commande pour envoyer ces infos via metadata
-    const metadata = session.metadata || {}
-    
-    if (metadata.address && metadata.city) {
-      const propertyData: PropertyData = {
-        address: metadata.address,
-        city: metadata.city,
+  try {
+    // Envoyer email de confirmation au client
+    await sendOrderConfirmationToClient({
+      customerName,
+      customerEmail: customerEmail!,
+      customerPhone,
+      product: productName,
+      amount: amountTotal,
+      propertyData: {
+        address: metadata.address || '',
+        city: metadata.city || '',
         postalCode: metadata.postalCode || '',
         propertyType: metadata.propertyType || 'appartement',
         rooms: parseInt(metadata.rooms || '0'),
         surface: parseInt(metadata.surface || '0'),
-        floor: metadata.floor,
+        floor: metadata.floor || '',
         features: metadata.features ? metadata.features.split(',') : [],
         description: metadata.description || '',
       }
-      
-      // Lancer le scraping en arrière-plan
-      triggerScraping(propertyData, customerEmail!, customerName!)
-        .catch(error => console.error('❌ Erreur scraping:', error))
-    } else {
-      console.log('⚠️ Pas de données de bien dans metadata, scraping non lancé')
-    }
+    })
+    
+    // Envoyer notification à l'équipe avec toutes les infos
+    await sendOrderNotificationToTeam({
+      customerName,
+      customerEmail: customerEmail!,
+      customerPhone,
+      product: productName,
+      amount: amountTotal,
+      propertyData: {
+        address: metadata.address || '',
+        city: metadata.city || '',
+        postalCode: metadata.postalCode || '',
+        propertyType: metadata.propertyType || 'appartement',
+        rooms: parseInt(metadata.rooms || '0'),
+        surface: parseInt(metadata.surface || '0'),
+        floor: metadata.floor || '',
+        features: metadata.features ? metadata.features.split(',') : [],
+        description: metadata.description || '',
+      }
+    })
+    
+    console.log('✅ Emails envoyés avec succès')
+  } catch (error) {
+    console.error('❌ Erreur envoi emails:', error)
   }
 }
 
 // Gérer un paiement réussi
 async function handlePaymentIntentSucceeded(paymentIntent: Stripe.PaymentIntent) {
   console.log('✅ Paiement réussi:', paymentIntent.id)
-  
-  // Actions à effectuer après un paiement réussi
 }
 
 // Gérer la création d'un abonnement
@@ -147,16 +151,12 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
   
   if ('email' in customer) {
     console.log(`📧 Nouvel abonnement pour: ${customer.email}`)
-    
-    // ICI : Envoyer email de bienvenue, activer accès, etc.
   }
 }
 
 // Gérer la mise à jour d'un abonnement
 async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
   console.log('📝 Abonnement mis à jour:', subscription.id)
-  
-  // Gérer les changements (upgrade, downgrade, etc.)
 }
 
 // Gérer l'annulation d'un abonnement
@@ -168,62 +168,5 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
   
   if ('email' in customer) {
     console.log(`📧 Abonnement annulé pour: ${customer.email}`)
-    
-    // ICI : Désactiver l'accès, envoyer email de confirmation d'annulation
-  }
-}
-
-// Fonction pour envoyer un email de confirmation (avec Resend)
-async function sendConfirmationEmailOld(data: {
-  email: string
-  name: string
-  product: string
-  amount: number
-}) {
-  console.log(`📧 Envoi email de confirmation à ${data.email}`)
-  
-  try {
-    // Envoyer l'email au client
-    await sendConfirmationEmail(data)
-    
-    // Envoyer la notification à l'équipe
-    await sendNotificationToTeam(data)
-    
-    console.log('✅ Emails envoyés avec succès')
-  } catch (error) {
-    console.error('❌ Erreur lors de l\'envoi des emails:', error)
-    // Ne pas bloquer le webhook si l'email échoue
-  }
-}
-
-// Fonction pour déclencher le scraping en arrière-plan
-async function triggerScraping(propertyData: PropertyData, customerEmail: string, customerName: string) {
-  console.log('🤖 Démarrage du scraping pour:', propertyData.address)
-  
-  try {
-    // Lancer le scan
-    const scrapingReport = await scanProperty(propertyData)
-    
-    console.log('✅ Scan terminé:', scrapingReport.summary)
-    
-    // Générer le rapport
-    const textReport = generateTextReport(scrapingReport)
-    const htmlReport = generateHTMLReport(scrapingReport)
-    
-    // TODO: Envoyer le rapport par email avec le HTML
-    // Pour l'instant, on log juste
-    console.log('📄 Rapport généré')
-    console.log(textReport)
-    
-    // TODO Phase 2: Envoyer par email avec pièce jointe PDF
-    // await sendReportEmail(customerEmail, customerName, htmlReport)
-    
-    // TODO Phase 2: Sauvegarder dans une base de données
-    // await saveReport(scrapingReport)
-    
-    return scrapingReport
-  } catch (error) {
-    console.error('❌ Erreur lors du scraping:', error)
-    throw error
   }
 }
