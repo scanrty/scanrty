@@ -15,9 +15,17 @@ export const metadata = {
   title: 'ScanRty - L\'IA au service de l\'immobilier et de l\'hôtellerie',
   description: 'Détection intelligente de sous-location et optimisation de la rentabilité hôtelière grâce à l\'IA.',
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
+  manifest: '/site.webmanifest',
+  themeColor: '#38bdf8',
 }
 
 export default function RootLayout({
@@ -27,12 +35,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <head>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-      </head>
       <body className={`${outfit.variable} ${jetbrainsMono.variable} font-sans`}>
         {children}
       </body>
