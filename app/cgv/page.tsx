@@ -18,7 +18,7 @@ export default function CGV() {
             <div>
               <h2 className="text-2xl font-bold text-[#38bdf8] mb-4">1. Objet</h2>
               <p>
-                Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre SAS PERAZUR (ci-après "ScanRty") et tout client (ci-après "le Client") souhaitant utiliser les services proposés sur le site scanrty.com.
+                Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre SCANRTY (ci-après "ScanRty") et tout client (ci-après "le Client") souhaitant utiliser les services proposés sur le site scanrty.com.
               </p>
             </div>
 

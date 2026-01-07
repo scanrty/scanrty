@@ -17,14 +17,15 @@ export default function Confidentialite() {
             
             <div>
               <p className="text-lg mb-4">
-                SAS PERAZUR (ci-après "ScanRty") s'engage à protéger la vie privée de ses utilisateurs et à traiter leurs données personnelles conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.
+                SCANRTY (ci-après "ScanRty") s'engage à protéger la vie privée de ses utilisateurs et à traiter leurs données personnelles conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.
               </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold text-[#38bdf8] mb-4">1. Responsable du traitement</h2>
               <p>
-                <strong>SAS PERAZUR</strong><br />
+                <strong>SCANRTY</strong><br />
+                Société par Actions Simplifiée Unipersonnelle (SASU)<br />
                 60 rue François 1er, 75008 Paris<br />
                 Email : info.client@scanrty.com
               </p>

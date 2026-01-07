@@ -17,11 +17,11 @@ export default function MentionsLegales() {
             
             <div>
               <h2 className="text-2xl font-bold text-[#38bdf8] mb-4">1. Informations sur l'éditeur</h2>
-              <p className="mb-2"><strong>Raison sociale :</strong> SAS PERAZUR</p>
-              <p className="mb-2"><strong>Forme juridique :</strong> Société par Actions Simplifiée</p>
+              <p className="mb-2"><strong>Raison sociale :</strong> SCANRTY</p>
+              <p className="mb-2"><strong>Forme juridique :</strong> Société par Actions Simplifiée Unipersonnelle (SASU)</p>
               <p className="mb-2"><strong>Siège social :</strong> 60 rue François 1er, 75008 Paris, France</p>
               <p className="mb-2"><strong>Email :</strong> info.client@scanrty.com</p>
-              <p className="mb-2"><strong>Directeur de la publication :</strong> Anthony PERAZUR</p>
+              <p className="mb-2"><strong>Directeur de la publication :</strong> Anthony PERUZZO</p>
             </div>
 
             <div>
