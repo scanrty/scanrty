@@ -309,7 +309,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mb-12">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <img src="/logo.svg" alt="ScanRty" className="w-10 h-10 rounded-full ring-2 ring-[#38bdf8]/30" />
+                <img src="/logo.svg" alt="ScanRty" className="w-10 h-10" />
                 <h3 className="text-2xl font-bold text-[#38bdf8]">ScanRty</h3>
               </div>
               <p className="text-white leading-relaxed">

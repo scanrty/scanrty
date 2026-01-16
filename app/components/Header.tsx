@@ -10,11 +10,11 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex justify-between items-center">
         {/* Logo */}
         <a href="/" className="flex items-center gap-3 sm:gap-4 text-xl sm:text-2xl font-bold no-underline z-10">
-          <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full overflow-hidden ring-2 ring-[#38bdf8]/30 shadow-lg flex-shrink-0">
+          <div className="w-10 h-10 sm:w-14 sm:h-14 flex-shrink-0">
             <img 
               src="/logo.svg"
               alt="ScanRty Logo" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               loading="eager"
             />
           </div>
