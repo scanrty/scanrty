@@ -10,38 +10,38 @@ export default function Home() {
       <Hero />
       
       {/* Stats Section */}
-      <section className="bg-[#001d3d] py-16">
-        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <section className="bg-[#001d3d] py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           <div className="text-center">
-            <div className="text-6xl font-extrabold bg-gradient-to-br from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent font-mono">24h</div>
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-br from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent font-mono">24h</div>
             <div className="text-lg text-white mt-2">Délai de réponse maximum</div>
           </div>
           <div className="text-center">
-            <div className="text-6xl font-extrabold bg-gradient-to-br from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent font-mono">99%</div>
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-br from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent font-mono">99%</div>
             <div className="text-lg text-white mt-2">Taux de détection</div>
           </div>
           <div className="text-center">
-            <div className="text-6xl font-extrabold bg-gradient-to-br from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent font-mono">500+</div>
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-br from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent font-mono">500+</div>
             <div className="text-lg text-white mt-2">Biens surveillés</div>
           </div>
           <div className="text-center">
-            <div className="text-6xl font-extrabold bg-gradient-to-br from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent font-mono">24/7</div>
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-br from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent font-mono">24/7</div>
             <div className="text-lg text-white mt-2">Surveillance continue</div>
           </div>
         </div>
       </section>
 
       {/* Problems Section */}
-      <section className="max-w-7xl mx-auto px-8 py-32" id="problems">
-        <h2 className="text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 sm:py-24 lg:py-32" id="problems">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent">
           Les défis que vous rencontrez
         </h2>
-        <p className="text-xl text-center text-white mb-16">
+        <p className="text-base sm:text-lg lg:text-xl text-center text-white mb-16">
           Deux problématiques majeures, une solution technologique
         </p>
         
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-[#001d3d] rounded-3xl p-12 border border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/20">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+          <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/20">
             <img src="/images/problem1.svg" alt="Sous-location" className="w-full h-48 object-cover rounded-2xl mb-8" />
             <h3 className="text-3xl font-bold text-[#38bdf8] mb-6">La sous-location illégale</h3>
             <ul className="space-y-4">
@@ -60,7 +60,7 @@ export default function Home() {
             </ul>
           </div>
           
-          <div className="bg-[#001d3d] rounded-3xl p-12 border border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/20">
+          <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/20">
             <img src="/images/problem2.svg" alt="Rentabilité hôtelière" className="w-full h-48 object-cover rounded-2xl mb-8" />
             <h3 className="text-3xl font-bold text-[#38bdf8] mb-6">La rentabilité hôtelière</h3>
             <ul className="space-y-4">
@@ -82,12 +82,12 @@ export default function Home() {
       </section>
 
       {/* Solutions Section */}
-      <section className="bg-[#001d3d] py-32" id="solutions">
-        <div className="max-w-7xl mx-auto px-8">
-          <h2 className="text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent">
+      <section className="bg-[#001d3d] py-12 sm:py-16 sm:py-24 lg:py-32" id="solutions">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent">
             Nos solutions intelligentes
           </h2>
-          <p className="text-xl text-center text-white mb-24">
+          <p className="text-base sm:text-lg lg:text-xl text-center text-white mb-24">
             Une technologie de pointe pour protéger et optimiser vos actifs
           </p>
           
@@ -113,7 +113,7 @@ export default function Home() {
                   ✓ Alertes en temps réel
                 </div>
               </div>
-              <a href="#pricing" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
+              <a href="#pricing" className="inline-block px-4 sm:px-6 lg:px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
                 Protéger mon bien
               </a>
             </div>
@@ -144,7 +144,7 @@ export default function Home() {
                   ✓ Alertes événements locaux
                 </div>
               </div>
-              <a href="#pricing" className="inline-block px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
+              <a href="#pricing" className="inline-block px-4 sm:px-6 lg:px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
                 Optimiser mon hôtel
               </a>
             </div>
@@ -156,17 +156,17 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="max-w-7xl mx-auto px-8 py-32" id="pricing">
-        <h2 className="text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 sm:py-24 lg:py-32" id="pricing">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent">
           Choisissez votre formule
         </h2>
-        <p className="text-xl text-center text-white mb-16">
+        <p className="text-base sm:text-lg lg:text-xl text-center text-white mb-16">
           Des solutions adaptées à chaque besoin
         </p>
         
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Sentinelle */}
-          <div className="bg-[#001d3d] rounded-3xl p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
+          <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
               <div className="text-sm text-white uppercase tracking-widest mb-2">Immobilier</div>
               <div className="text-3xl font-bold text-[#38bdf8] mb-4">Sentinelle</div>
@@ -187,13 +187,13 @@ export default function Home() {
                 Service client sous 48h
               </li>
             </ul>
-            <a href="/commander" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
+            <a href="/commander" className="block w-full px-4 sm:px-6 lg:px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
               Commander
             </a>
           </div>
 
           {/* VigilAn */}
-          <div className="bg-[#001d3d] rounded-3xl p-12 border-2 border-[#38bdf8] hover:-translate-y-2 transition-all shadow-2xl shadow-[#38bdf8]/30 relative md:scale-105">
+          <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8] hover:-translate-y-2 transition-all shadow-2xl shadow-[#38bdf8]/30 relative md:scale-105">
             <div className="absolute top-5 right-[-25px] bg-gradient-to-br from-[#1e3a5f] to-[#152d47] text-white px-12 py-2 text-xs font-bold rotate-45 shadow-lg">
               POPULAIRE
             </div>
@@ -220,13 +220,13 @@ export default function Home() {
                 Service client sous 24h
               </li>
             </ul>
-            <a href="/commander" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
+            <a href="/commander" className="block w-full px-4 sm:px-6 lg:px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
               Souscrire
             </a>
           </div>
 
           {/* TarGate */}
-          <div className="bg-[#001d3d] rounded-3xl p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
+          <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
               <div className="text-sm text-white uppercase tracking-widest mb-2">Hôtellerie</div>
               <div className="text-3xl font-bold text-[#38bdf8] mb-4">TarGate</div>
@@ -250,13 +250,13 @@ export default function Home() {
                 Support prioritaire
               </li>
             </ul>
-            <a href="https://buy.stripe.com/bJe3cwf5X4TmfnGcb84Rq02" target="_blank" rel="noopener noreferrer" className="block w-full px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
+            <a href="https://buy.stripe.com/bJe3cwf5X4TmfnGcb84Rq02" target="_blank" rel="noopener noreferrer" className="block w-full px-4 sm:px-6 lg:px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
               Essayer
             </a>
           </div>
 
           {/* HitScan */}
-          <div className="bg-[#001d3d] rounded-3xl p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
+          <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
               <div className="text-sm text-white uppercase tracking-widest mb-2">Hôtellerie</div>
               <div className="text-3xl font-bold text-[#38bdf8] mb-4">HitScan</div>
@@ -280,7 +280,7 @@ export default function Home() {
                 Présence d'un consultant
               </li>
             </ul>
-            <a href="/contact" className="block w-full px-8 py-4 text-center rounded-full bg-transparent text-[#38bdf8] font-semibold no-underline border-2 border-[#38bdf8] hover:bg-[#38bdf8] hover:text-[#000814] transition-all">
+            <a href="/contact" className="block w-full px-4 sm:px-6 lg:px-8 py-4 text-center rounded-full bg-transparent text-[#38bdf8] font-semibold no-underline border-2 border-[#38bdf8] hover:bg-[#38bdf8] hover:text-[#000814] transition-all">
               Demander un devis
             </a>
           </div>
@@ -291,7 +291,7 @@ export default function Home() {
       <section className="bg-gradient-to-br from-[#1e3a5f] to-[#001d3d] py-24 text-center my-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.15)_0%,transparent_70%)]"></div>
         <div className="relative z-10">
-          <h2 className="text-5xl font-extrabold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6">
             Prêt à protéger votre patrimoine ?
           </h2>
           <p className="text-2xl text-white/90 mb-8">
@@ -304,9 +304,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#001d3d] py-16 border-t border-[#38bdf8]/10" id="contact">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+      <footer className="bg-[#001d3d] py-12 sm:py-16 border-t border-[#38bdf8]/10" id="contact">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mb-12">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <img src="/logo.png" alt="ScanRty" className="w-10 h-10 rounded-full ring-2 ring-[#38bdf8]/30" />
