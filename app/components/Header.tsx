@@ -12,10 +12,10 @@ export default function Header() {
         <a href="/" className="flex items-center gap-3 sm:gap-4 text-xl sm:text-2xl font-bold no-underline z-10">
           <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full overflow-hidden ring-2 ring-[#38bdf8]/30 shadow-lg flex-shrink-0">
             <img 
-              src="/logo.png" 
+              src="/logo.svg"
               alt="ScanRty Logo" 
               className="w-full h-full object-cover"
-              style={{ imageRendering: '-webkit-optimize-contrast' }}
+              loading="eager"
             />
           </div>
           <span className="whitespace-nowrap">
@@ -28,6 +28,7 @@ export default function Header() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 lg:gap-8 list-none items-center">
           <li><a href="#solutions" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors text-sm lg:text-base">Solutions</a></li>
+          <li><a href="/demo" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors text-sm lg:text-base">Démo</a></li>
           <li><a href="#pricing" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors text-sm lg:text-base">Tarifs</a></li>
           <li><a href="/contact" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors text-sm lg:text-base">Contact</a></li>
           <li>
@@ -58,6 +59,15 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Solutions
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/demo" 
+                className="block px-4 py-3 text-white no-underline font-medium hover:bg-[#38bdf8]/10 rounded-lg transition-colors" 
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Démo
               </a>
             </li>
             <li>
