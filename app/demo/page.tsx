@@ -49,7 +49,7 @@ export default function Demo() {
               </h2>
               
               <p className="text-lg sm:text-xl text-white/80 mb-8 leading-relaxed">
-                Notre IA scanne automatiquement <strong className="text-[#38bdf8]">Airbnb, Booking, Le Bon Coin et Abritel</strong> pour détecter toute sous-location illégale de votre bien immobilier.
+                Notre IA scanne automatiquement <strong className="text-[#38bdf8]">Airbnb, Booking, Le Bon Coin, Abritel...</strong> pour détecter toute sous-location illégale de votre bien immobilier.
               </p>
 
               <div className="space-y-6 mb-8">

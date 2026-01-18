@@ -255,32 +255,32 @@ export default function Home() {
             </a>
           </div>
 
-          {/* HitScan */}
+          {/* Lucidis B2G */}
           <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
-              <div className="text-sm text-white uppercase tracking-widest mb-2">Hôtellerie</div>
-              <div className="text-3xl font-bold text-[#38bdf8] mb-4">HitScan</div>
+              <div className="text-sm text-white uppercase tracking-widest mb-2">Municipalités</div>
+              <div className="text-3xl font-bold text-[#38bdf8] mb-4">Lucidis</div>
               <div className="text-3xl font-extrabold font-mono">Sur devis</div>
-              <div className="text-white">consulting</div>
+              <div className="text-white">B2G</div>
             </div>
             <ul className="space-y-4 mb-8">
               <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
-                Analyse opérationnelle complète
+                Surveillance territoriale complète
               </li>
               <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
-                Rapport détaillé
+                Dashboard municipal dédié
               </li>
               <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
-                Axes d'amélioration identifiés
+                Détection locations non déclarées
               </li>
               <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
-                Suggestions marketing digital
+                Rapports & cartographie
               </li>
               <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
-                Présence d'un consultant
+                POC gratuit 30 jours
               </li>
             </ul>
-            <a href="/contact" className="block w-full px-4 sm:px-6 lg:px-8 py-4 text-center rounded-full bg-transparent text-[#38bdf8] font-semibold no-underline border-2 border-[#38bdf8] hover:bg-[#38bdf8] hover:text-[#000814] transition-all">
+            <a href="/contact" className="block w-full px-4 sm:px-6 lg:px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline hover:-translate-y-0.5 transition-all">
               Demander un devis
             </a>
           </div>

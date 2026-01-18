@@ -76,7 +76,7 @@ ${formData.message}
             </p>
             
             <div className="flex gap-4 justify-center">
-              <a href="/" className="px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
+              <a href="/" className="px-8 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline hover:-translate-y-0.5 transition-all">
                 Retour à l'accueil
               </a>
               <button 
@@ -219,7 +219,7 @@ ${formData.message}
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="px-12 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#ffffff] text-white font-bold text-lg  hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-12 py-4 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-bold text-lg hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === 'sending' ? 'Envoi en cours...' : 'Envoyer le message'}
               </button>

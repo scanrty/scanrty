@@ -27,9 +27,9 @@ export default function Header() {
         
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 lg:gap-8 list-none items-center">
-          <li><a href="#solutions" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors text-sm lg:text-base">Solutions</a></li>
+          <li><a href="/#solutions" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors text-sm lg:text-base">Solutions</a></li>
           <li><a href="/demo" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors text-sm lg:text-base">Démo</a></li>
-          <li><a href="#pricing" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors text-sm lg:text-base">Tarifs</a></li>
+          <li><a href="/#pricing" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors text-sm lg:text-base">Tarifs</a></li>
           <li><a href="/contact" className="text-white no-underline font-medium hover:text-[#38bdf8] transition-colors text-sm lg:text-base">Contact</a></li>
           <li>
             <a href="/contact" className="px-6 lg:px-8 py-2.5 lg:py-3 rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold text-sm lg:text-base no-underline hover:-translate-y-0.5 transition-all whitespace-nowrap">
@@ -54,7 +54,7 @@ export default function Header() {
           <ul className="flex flex-col gap-2 p-4 list-none">
             <li>
               <a 
-                href="#solutions" 
+                href="/#solutions" 
                 className="block px-4 py-3 text-white no-underline font-medium hover:bg-[#38bdf8]/10 rounded-lg transition-colors" 
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -72,7 +72,7 @@ export default function Header() {
             </li>
             <li>
               <a 
-                href="#pricing" 
+                href="/#pricing" 
                 className="block px-4 py-3 text-white no-underline font-medium hover:bg-[#38bdf8]/10 rounded-lg transition-colors" 
                 onClick={() => setMobileMenuOpen(false)}
               >
