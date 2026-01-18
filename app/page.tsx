@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 sm:py-24 lg:py-32" id="pricing">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-32" id="pricing">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-[#38bdf8] to-[#ffffff] bg-clip-text text-transparent">
           Choisissez votre formule
         </h2>
@@ -164,8 +164,19 @@ export default function Home() {
           Des solutions adaptées à chaque besoin
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {/* Sentinelle */}
+        {/* IMMOBILIER Section */}
+        <div className="mb-20">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#38bdf8]"></div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#38bdf8] flex items-center gap-3">
+              <span className="text-3xl">🏠</span>
+              Immobilier
+            </h3>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#38bdf8]"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Sentinelle */}
           <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
               <div className="text-sm text-white uppercase tracking-widest mb-2">Immobilier</div>
@@ -254,8 +265,22 @@ export default function Home() {
               Demander un devis
             </a>
           </div>
+          </div>
+        </div>
 
-          {/* TarGate */}
+        {/* HÔTELLERIE Section */}
+        <div>
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#38bdf8]"></div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#38bdf8] flex items-center gap-3">
+              <span className="text-3xl">🏨</span>
+              Hôtellerie
+            </h3>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#38bdf8]"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {/* TarGate */}
           <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
               <div className="text-sm text-white uppercase tracking-widest mb-2">Hôtellerie</div>
@@ -313,6 +338,7 @@ export default function Home() {
             <a href="/contact" className="block w-full px-4 sm:px-6 lg:px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline hover:-translate-y-0.5 transition-all">
               Demander un devis
             </a>
+          </div>
           </div>
         </div>
       </section>
