@@ -9,7 +9,7 @@ export default function ContactPage() {
     lastName: '',
     email: '',
     phone: '',
-    requestType: 'hitscan',
+    requestType: 'lucidis',
     message: ''
   })
   
@@ -23,7 +23,12 @@ export default function ContactPage() {
     const emailContent = `
 Nouvelle demande de contact - ScanRty
 
-Type de demande : ${formData.requestType === 'hitscan' ? 'HitScan - Consulting' : formData.requestType === 'question' ? 'Question générale' : 'Support technique'}
+Type de demande : ${
+  formData.requestType === 'lucidis' ? 'Lucidis - Demande de devis solution municipale' :
+  formData.requestType === 'hitscan' ? 'HitScan - Demande de devis consulting' : 
+  formData.requestType === 'question' ? 'Question générale' : 
+  'Support technique'
+}
 
 Nom : ${formData.firstName} ${formData.lastName}
 Email : ${formData.email}
@@ -191,6 +196,7 @@ ${formData.message}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl bg-[#000814] border border-[#38bdf8]/20 text-white focus:border-[#38bdf8] focus:outline-none transition-colors"
               >
+                <option value="lucidis">Lucidis - Demande de devis solution municipale</option>
                 <option value="hitscan">HitScan - Demande de devis consulting</option>
                 <option value="question">Question générale</option>
                 <option value="support">Support technique</option>

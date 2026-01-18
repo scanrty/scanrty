@@ -164,7 +164,7 @@ export default function Home() {
           Des solutions adaptées à chaque besoin
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {/* Sentinelle */}
           <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
@@ -225,6 +225,36 @@ export default function Home() {
             </a>
           </div>
 
+          {/* Lucidis B2G */}
+          <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
+            <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
+              <div className="text-sm text-white uppercase tracking-widest mb-2">Municipalités</div>
+              <div className="text-3xl font-bold text-[#38bdf8] mb-4">Lucidis</div>
+              <div className="text-3xl font-extrabold font-mono">Sur devis</div>
+              <div className="text-white">B2G</div>
+            </div>
+            <ul className="space-y-4 mb-8">
+              <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
+                Surveillance territoriale
+              </li>
+              <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
+                Dashboard municipal
+              </li>
+              <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
+                Détection non-déclarées
+              </li>
+              <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
+                Rapports & cartographie
+              </li>
+              <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
+                POC gratuit 30 jours
+              </li>
+            </ul>
+            <a href="/contact" className="block w-full px-4 sm:px-6 lg:px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline  hover:-translate-y-0.5 transition-all">
+              Demander un devis
+            </a>
+          </div>
+
           {/* TarGate */}
           <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
@@ -255,29 +285,29 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Lucidis B2G */}
+          {/* HitScan */}
           <div className="bg-[#001d3d] rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-[#38bdf8]/10 hover:border-[#38bdf8] hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-[#38bdf8]/30">
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
-              <div className="text-sm text-white uppercase tracking-widest mb-2">Municipalités</div>
-              <div className="text-3xl font-bold text-[#38bdf8] mb-4">Lucidis</div>
+              <div className="text-sm text-white uppercase tracking-widest mb-2">Hôtellerie</div>
+              <div className="text-3xl font-bold text-[#38bdf8] mb-4">HitScan</div>
               <div className="text-3xl font-extrabold font-mono">Sur devis</div>
-              <div className="text-white">B2G</div>
+              <div className="text-white">consulting</div>
             </div>
             <ul className="space-y-4 mb-8">
               <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
-                Surveillance territoriale complète
+                Analyse opérationnelle
               </li>
               <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
-                Dashboard municipal dédié
+                Rapport détaillé
               </li>
               <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
-                Détection locations non déclarées
+                Axes d'amélioration
               </li>
               <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
-                Rapports & cartographie
+                Marketing digital
               </li>
               <li className="text-white pl-8 relative before:content-['✓'] before:absolute before:left-0 before:text-[#38bdf8] before:font-bold">
-                POC gratuit 30 jours
+                Consultant dédié
               </li>
             </ul>
             <a href="/contact" className="block w-full px-4 sm:px-6 lg:px-8 py-4 text-center rounded-full bg-gradient-to-br from-[#38bdf8] to-[#1e3a5f] text-white font-semibold no-underline hover:-translate-y-0.5 transition-all">
