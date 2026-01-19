@@ -115,11 +115,12 @@ export default function Demo() {
                   
                   {/* Pour intégrer une vraie vidéo, utilise :
                   <iframe 
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/TON_VIDEO_ID" 
-                    title="Démonstration Sentinelle & VigilAn"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+					className="w-full aspect-video rounded-xl"
+					src="https://www.youtube.com/embed/DGU8LumnF6Y?rel=0&modestbranding=1" 
+					title="Démonstration Sentinelle & VigilAn"
+					frameBorder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowFullScreen
                   ></iframe>
                   */}
                 </div>
