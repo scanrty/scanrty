@@ -97,6 +97,7 @@ export default function Demo() {
             {/* Vidéo */}
             <div className="order-1 lg:order-2">
               <div className="relative rounded-3xl overflow-hidden bg-[#001d3d] border-2 border-[#38bdf8]/20 shadow-2xl shadow-[#38bdf8]/20">
+<<<<<<< HEAD
                 <div className="aspect-video bg-gradient-to-br from-[#1e3a5f] to-[#001d3d] flex items-center justify-center">
                   {/* Placeholder vidéo */}
                   <div className="text-center p-8">
@@ -124,6 +125,16 @@ export default function Demo() {
                   ></iframe>
                   
                 </div>
+=======
+                <iframe 
+                  className="w-full aspect-video"
+                  src="https://www.youtube.com/embed/DGU8LumnF6Y?rel=0&modestbranding=1" 
+                  title="Démonstration Sentinelle & VigilAn"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+>>>>>>> 3170ec94b61fc995d6608a7b79784199021ce721
                 
                 {/* Badge "Live Demo" */}
                 <div className="absolute top-4 right-4 px-4 py-2 bg-red-500 text-white text-xs font-bold rounded-full flex items-center gap-2">
