@@ -113,16 +113,16 @@ export default function Demo() {
                     </p>
                   </div>
                   
-                  {/* Pour intégrer une vraie vidéo, utilise :
+                  
                   <iframe 
 					className="w-full aspect-video rounded-xl"
-					src="https://www.youtube.com/embed/DGU8LumnF6Y?rel=0&modestbranding=1" 
+					src="https://www.youtube.com/embed/sKWsL95f09o?rel=0&modestbranding=1" 
 					title="Démonstration Sentinelle & VigilAn"
 					frameBorder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowFullScreen
                   ></iframe>
-                  */}
+                  
                 </div>
                 
                 {/* Badge "Live Demo" */}
