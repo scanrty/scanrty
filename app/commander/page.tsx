@@ -9,13 +9,13 @@ const PRODUCTS = {
     name: 'Sentinelle',
     price: 29,
     description: 'Rapport ponctuel de détection de sous-location',
-    stripeLink: 'https://buy.stripe.com/9B67sM0b3bhK4J2ejg4Rq00'
+    stripeLink: 'https://buy.stripe.com/dRmeVe4rj4Tm8Zidfc4Rq04'
   },
   vigilan: {
     name: 'VigilAn',
     price: 99,
     description: 'Surveillance annuelle avec rapports mensuels',
-    stripeLink: 'https://buy.stripe.com/7sYcN66zr0D6ejC3EC4Rq01'
+    stripeLink: 'https://buy.stripe.com/cNi14o7Dv85ygrKcb84Rq03'
   }
 }
 
