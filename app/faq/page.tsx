@@ -126,7 +126,7 @@ export default function FAQ() {
                 <div>
                   <h3 className="text-lg font-bold text-white mb-2">Proposez-vous un essai gratuit ?</h3>
                   <p className="text-white/80">
-                    Sentinelle à 9€ est notre offre d'essai. Pour un scan unique, c'est le moyen le plus économique de tester notre service.
+                    Sentinelle à 29€ est notre offre d'essai. Pour un scan unique, c'est le moyen le plus économique de tester notre service.
                   </p>
                 </div>
               </div>

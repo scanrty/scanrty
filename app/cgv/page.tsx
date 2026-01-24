@@ -24,7 +24,7 @@ export default function CGV() {
 
             <div>
               <h2 className="text-2xl font-bold text-[#38bdf8] mb-4">2. Services proposés</h2>
-              <p className="mb-3"><strong>2.1 Sentinelle (9€) :</strong></p>
+              <p className="mb-3"><strong>2.1 Sentinelle (29€) :</strong></p>
               <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Scan ponctuel de détection de sous-location sur votre bien immobilier</li>
                 <li>Rapport détaillé envoyé sous 24 heures maximum</li>
@@ -32,7 +32,7 @@ export default function CGV() {
                 <li>Support client sous 48h</li>
               </ul>
 
-              <p className="mb-3"><strong>2.2 VigilAn (59€/an) :</strong></p>
+              <p className="mb-3"><strong>2.2 VigilAn (99€/an) :</strong></p>
               <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Surveillance continue pendant 12 mois</li>
                 <li>Rapport mensuel automatique</li>

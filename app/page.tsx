@@ -181,7 +181,7 @@ export default function Home() {
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
               <div className="text-sm text-white uppercase tracking-widest mb-2">Immobilier</div>
               <div className="text-3xl font-bold text-[#38bdf8] mb-4">Sentinelle</div>
-              <div className="text-6xl font-extrabold font-mono">9€</div>
+              <div className="text-6xl font-extrabold font-mono">29€</div>
               <div className="text-white">ponctuel</div>
             </div>
             <ul className="space-y-4 mb-8">
@@ -211,7 +211,7 @@ export default function Home() {
             <div className="text-center mb-8 pb-8 border-b border-[#38bdf8]/20">
               <div className="text-sm text-white uppercase tracking-widest mb-2">Immobilier</div>
               <div className="text-3xl font-bold text-[#38bdf8] mb-4">VigilAn</div>
-              <div className="text-6xl font-extrabold font-mono">59€</div>
+              <div className="text-6xl font-extrabold font-mono">99€</div>
               <div className="text-white">/ an</div>
             </div>
             <ul className="space-y-4 mb-8">
