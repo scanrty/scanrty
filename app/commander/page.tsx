@@ -68,44 +68,9 @@ export default function CommanderPage() {
     setStatus('sending')
 
     try {
-      // Créer une session Stripe avec toutes les données
-      const response = await fetch('/api/create-checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          product: selectedProduct,
-          propertyData: {
-            address: formData.address,
-            city: formData.city,
-            postalCode: formData.postalCode,
-            propertyType: formData.propertyType,
-            rooms: formData.rooms,
-            surface: formData.surface,
-            floor: formData.floor,
-            features: formData.features,
-            description: formData.description,
-          },
-          customerData: {
-            firstName: formData.firstName,
-            lastName: formData.lastName,
-            email: formData.email,
-            phone: formData.phone,
-          },
-        }),
-      })
-
-      const data = await response.json()
-
-      if (data.url) {
-        // Rediriger vers Stripe Checkout
-        window.location.href = data.url
-      } else {
-        console.error('Erreur:', data.error)
-        setStatus('idle')
-        alert('Une erreur est survenue. Veuillez réessayer.')
-      }
+      // Redirection directe vers le payment link Stripe
+      const product = PRODUCTS[selectedProduct]
+      window.location.href = product.stripeLink
     } catch (error) {
       console.error('Erreur:', error)
       setStatus('idle')
