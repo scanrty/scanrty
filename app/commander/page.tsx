@@ -7,13 +7,13 @@ import Header from '../components/Header'
 const PRODUCTS = {
   sentinelle: {
     name: 'Sentinelle',
-    price: 9,
+    price: 29,
     description: 'Rapport ponctuel de détection de sous-location',
     stripeLink: 'https://buy.stripe.com/9B67sM0b3bhK4J2ejg4Rq00'
   },
   vigilan: {
     name: 'VigilAn',
-    price: 59,
+    price: 99,
     description: 'Surveillance annuelle avec rapports mensuels',
     stripeLink: 'https://buy.stripe.com/7sYcN66zr0D6ejC3EC4Rq01'
   }
